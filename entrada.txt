@@ -1,0 +1,10 @@
+Carlos Silva;75.2;1.70
+Juliana Rocha;62.5;1.65
+Rafael Costa;88.0;1.82
+Fernanda Lima;54.3;1.59
+João Pedro;69.7;1.73
+Mariana Alves;47.9;1.55
+Bruno Martins;91.4;1.85
+Larissa Souza;58.6;1.68
+Thiago Silva;83.2;2.0
+Camila Duarte;64.0;1.70

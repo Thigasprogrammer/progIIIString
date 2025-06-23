@@ -1,8 +1,8 @@
-# Escreva um programa que lê em uma sequência da linha de comando e retorna uma tabela com as letras do alfabeto em ordem alfabética 
-# que ocorrem na sequência junto com o número de vezes que cada letra ocorre. 
-# Ignore se as letras são maiúsculas ou minúsculas. Um exemplo de execução do programa ficaria assim
+# Programa que lê uma sequência da linha de comando e retorna uma tabela com as letras do alfabeto em ordem alfabética 
+
 def main():
 	texto = input("digite um texto para ser analisado: ")
+	texto = texto.lower()
 	dic = {}
 	desconsiderar = "/|!@#$%¨&*(1234567890-_=+){}[]:; " #caracteres a desconsiderar
 

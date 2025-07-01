@@ -45,11 +45,11 @@ def f_calcularpont(grupo1: dict, grupo2: dict) -> list: #função que calcula po
 
 	for i in range(len(listamenor)):
 		for j in range(len(listamenor[i])):
-			if listamenor[i][j] == listamaior[i][j] and (listamenor[i][j] == "S" or listamenor[i][j] == "N"): #verifica se a lista1 na posição n tem resposta igual a da lista 2
+			if resposta1[i][j] == resposta2[i][j] and (resposta1[i][j] == "S" or resposta1[i][j] == "N"): #verifica se a lista1 na posição n tem resposta igual a da lista 2
 				pont = pont + 2
 
 			else:
-				if listamenor[i][j] == listamaior[i][j] and listamenor[i][j] == "I":
+				if resposta1[i][j] == resposta2[i][j] and resposta1[i][j] == "I":
 					pont = pont + 1
 
 				else:
@@ -87,7 +87,7 @@ def f_dicjunto(dic_grupo1: dict, dic_grupo2: dict) -> dict: #função retorna o 
 		listamenor = lst_pessoas1
 
 	for i in range(len(listamenor)):
-		tupla = (listamenor[i], listamaior[i])
+		tupla = (lst_pessoas1[i], lst_pessoas2[i])
 		pont = lst_pontos[i]
 		dicionario[tupla] = pont
 	

@@ -27,21 +27,29 @@ def f_sorespostas(dicgrupo: dict) -> list: #função que só deixa as respostas
 
 def f_calcularpont(grupo1: dict, grupo2: dict) -> list: #função que calcula pontuação
 	#definindo variaveis
+	listamenor = list()
+	listamaior = list()
 	lst_pont = list()
 	pont = int()
 	resposta1 = f_sorespostas(grupo1)
 	resposta2 = f_sorespostas(grupo2)
 
-
 	#processacemento
+	if len(resposta1) > len(resposta2): #verificar qual lista é maior para usar a menor no for
+		listamaior = resposta1
+		listamenor = resposta2
 
-	for i in range(len(resposta1)):
-		for j in range(len(resposta1[i])):
-			if resposta1[i][j] == resposta2[i][j] and (resposta1[i][j] == "S" or resposta1[i][j] == "N"): #verifica se a lista1 na posição n tem resposta igual a da lista 2
+	else:
+		listamaior = resposta2
+		listamenor = resposta1
+
+	for i in range(len(listamenor)):
+		for j in range(len(listamenor[i])):
+			if listamenor[i][j] == listamaior[i][j] and (listamenor[i][j] == "S" or listamenor[i][j] == "N"): #verifica se a lista1 na posição n tem resposta igual a da lista 2
 				pont = pont + 2
 
 			else:
-				if resposta1[i][j] == resposta2[i][j] and resposta1[i][j] == "I":
+				if listamenor[i][j] == listamaior[i][j] and listamenor[i][j] == "I":
 					pont = pont + 1
 
 				else:
@@ -56,6 +64,8 @@ def f_dicjunto(dic_grupo1: dict, dic_grupo2: dict) -> dict: #função retorna o 
 	#definindo variaveis
 	lst_pessoas1 = list() 
 	lst_pessoas2 = list()
+	listamenor = list()
+	listamaior = list()
 	lst_total = list()
 	lst_pontos = list()
 	resposta1 = list()
@@ -68,8 +78,16 @@ def f_dicjunto(dic_grupo1: dict, dic_grupo2: dict) -> dict: #função retorna o 
 	lst_pessoas2 = list(dic_grupo2.keys())
 	lst_pontos = f_calcularpont(dic_grupo1, dic_grupo2)
 
-	for i in range(len(lst_pessoas1)):
-		tupla = (lst_pessoas1[i], lst_pessoas2[i])
+	if len(lst_pessoas1) > len(lst_pessoas2): #verificar qual lista é maior para usar a menor no for
+		listamaior = lst_pessoas1
+		listamenor = lst_pessoas2
+
+	else:
+		listamaior = lst_pessoas2
+		listamenor = lst_pessoas1
+
+	for i in range(len(listamenor)):
+		tupla = (listamenor[i], listamaior[i])
 		pont = lst_pontos[i]
 		dicionario[tupla] = pont
 	
